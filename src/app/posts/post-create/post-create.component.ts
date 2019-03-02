@@ -1,14 +1,14 @@
-import { Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output} from "@angular/core";
 import { NgForm} from "@angular/forms";
 
-import { PostsService } from '../posts.service';
+import { PostsService } from "../posts.service";
 
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
   styleUrls: ['./post-create.component.css']
 })
-export class PostCreateComponent {
+export class PostCreateComponent {  
   enteredTitle = '';
   enteredContent ='';
 
@@ -20,6 +20,5 @@ export class PostCreateComponent {
     }
     this.postsService.addPost(form.value.title, form.value.content);
     form.resetForm();
-  };
-
+  }
 }
