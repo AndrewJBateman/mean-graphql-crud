@@ -1,7 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const Post = require('./models/post');
 
 const app = express();
+
+mongoose
+  .connect(
+  "mongodb+srv://Andrew:Spider01@cluster0-pl5l8.mongodb.net/node-angular?retryWrites=true", 
+  { useNewUrlParser: true }
+  )
+  .then(() => {
+    console.log('Connected to database');
+  })
+  .catch(() => {
+    console.log('connection failed');
+  });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -20,30 +35,37 @@ app.use((req, res, next) => {
 });
 
 app.post("/api/posts", (req, res, next) => {
-  const post = req.body;
-  console.log(post);
-  res.status(201).json({
-    message: 'Post added successfully'
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content
   });
+  post.save().then(result => {
+    res.status(201).json({
+      message: 'Post added successfully',
+      postId: createdPost._id
+    });
+  });
+
 });
 
 app.get("/api/posts", (req, res, next) => {
-  const posts = [
-    { 
-      id: 'sdfsgf1', 
-      title: 'first server-side post', 
-      content: 'This comes from the server' 
-    },
-    { 
-      id: 'sdfsgf2', 
-      title: 'second server-side post', 
-      content: 'This comes from the server' 
-    }
-  ];
-  res.status(200).json({
-    message: 'posts fetched successfully',
-    posts: posts
-  });
+  Post
+    .find()
+    .then(documents => {
+      res.status(200).json({
+        message: 'posts fetched successfully',
+        posts: documents
+      });
+    });
+});
+
+app.delete("/api/posts/:id", (req, res, next) => {
+  Post
+    .deleteOne({_id: req.params.id})
+    .then(result => {
+      console.log(result);
+      res.status(200).json({message: 'post deleted'});
+    });
 });
 
 module.exports = app;
