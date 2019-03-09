@@ -17,7 +17,19 @@ Project using MongoDB, Express.js, Angular and Node.js
 
 The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angular-2-and-nodejs-the-practical-guide/learn/v4/content) course contains 13 sections, listed below:
 
-
+**Section 1 Getting Started:** Explanation of the MongoDB-Express-Angular-Node.js stack, Single Page Applications
+**Section 2 The Angular Frontend - Understanding the Basics**
+**Section 3 Adding NodeJS to our Project**
+**Section 4 Working with MongoDB**
+**Section 5 Enhancing the App**
+**Section 6 Adding Image Uploads to our App**
+**Section 7 Adding Pagination**
+**Section 8 Adding User Authentication**
+**Section 9 Authorization**
+**Section 10 Handling Errors**
+**Section 11 Optimizations**
+**Section 12 Deploying our App**
+**Section 13 Course Roundup**
 
 ## Screenshots
 
@@ -25,14 +37,15 @@ The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angula
 
 ## Technologies
 
-* MongoDB - version 1.0
-* Express.js - version 2.0
-* Angular - version 7.0.0, including [Angular Material](https://material.angular.io/)
-* Node.js
+* [MongoDB Atlas](https://www.mongodb.com/) version 4.0 using AWS Cloud storage.
+* [Express](https://www.npmjs.com/package/express) version 4.16.4
+* [Angular](https://angular.io/) version 7.0.0, including [Angular Material](https://material.angular.io/)
+* [Node.js](https://nodejs.org/en/) version 10.15.3
 
 ## Setup
 
-Describe how to install / setup your local environement / add link to demo version.
+To start the Angular frontend: ng serve
+To start the Node.js backend: npm run start:server
 
 ## Code Examples
 
