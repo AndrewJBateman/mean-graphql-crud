@@ -15,7 +15,9 @@ Project using MongoDB, Express.js, Angular and Node.js
 
 ## General info
 
-Add more general information about project. What the purpose of the project is? Motivation?
+The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angular-2-and-nodejs-the-practical-guide/learn/v4/content) course contains 13 sections, listed below:
+
+
 
 ## Screenshots
 

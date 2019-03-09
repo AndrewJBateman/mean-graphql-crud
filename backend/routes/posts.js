@@ -61,7 +61,7 @@ router.put(
     let imagePath = req.body.imagePath;
     if (req.file) {
       const url = req.protocol + "://" + req.get("host");
-      imagePath = url + "/images/" + req.file.filename
+      imagePath = url + "/images/" + req.file.filename;
     }
     const post = new Post({
       _id: req.body.id,
@@ -107,7 +107,7 @@ router.get("/:id", (req, res, next) => {
       if (post){
         res.status(200).json(post);
       } else {
-        res.status(404).json({message: 'Post not found'})
+        res.status(404).json({message: 'Post not found'});
       }
     });
 });
