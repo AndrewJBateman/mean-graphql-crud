@@ -26,8 +26,8 @@ The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angula
 **Section 7 Adding Pagination**
 **Section 8 Adding User Authentication**
 **Section 9 Authorization**
-**Section 10 Handling Errors**
-**Section 11 Optimizations**
+**Section 10 Handling Errors**Uses a global Http-Interceptor to minimise code required for handling errors. Adds a separate error-handling component. Uses separate errors for different components.
+**Section 11 Optimizations**Using Controllers:
 **Section 12 Deploying our App**
 **Section 13 Course Roundup**
 
@@ -44,8 +44,9 @@ The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angula
 
 ## Setup
 
-To start the Angular frontend: ng serve
-To start the Node.js backend: npm run start:server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+To start the Node.js backend on "localhost://3000": `npm run start:server`
 
 ## Code Examples
 

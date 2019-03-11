@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -7,10 +8,11 @@ const postsRoutes = require('./routes/posts')
 const userRoutes = require('./routes/user')
 
 const app = express();
+const url = process.env.DB_URL;
 
 mongoose
   .connect(
-  "mongodb+srv://Andrew:Spider01@cluster0-pl5l8.mongodb.net/node-angular",
+  url,
   { useNewUrlParser: true }
   )
   .then(() => {
@@ -21,7 +23,7 @@ mongoose
   });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/images', express.static(path.join("backend/images")));
 
 app.use((req, res, next) => {

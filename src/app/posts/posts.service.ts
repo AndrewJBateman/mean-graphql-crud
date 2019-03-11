@@ -16,7 +16,7 @@ export class PostsService {
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
-      .get<{ message: string; posts: any, maxPosts: number }>(
+      .get<{ message: string; posts: any; maxPosts: number }>(
         'http://localhost:3000/api/posts' + queryParams
       )
       .pipe(
@@ -27,11 +27,12 @@ export class PostsService {
                 title: post.title,
                 content: post.content,
                 id: post._id,
-                imagePath: post.imagePath
+                imagePath: post.imagePath,
+                creator: post.creator
               };
             }),
             maxPosts: postData.maxPosts
-            };
+          };
         })
       )
       .subscribe(transformedPostData => {
@@ -51,9 +52,10 @@ export class PostsService {
     return this.http.get<{
       _id: string;
       title: string;
-      content: string,
-      imagePath: string
-    }>('http://localhost:3000/api/posts' + id);
+      content: string;
+      imagePath: string;
+      creator: string;
+    }>('http://localhost:3000/api/posts/' + id);
   }
 
   addPost(title: string, content: string, image: File) {
@@ -84,12 +86,12 @@ export class PostsService {
         id: id,
         title: title,
         content: content,
-        imagePath: image
+        imagePath: image,
+        creator: null
       };
     }
-
-  this.http
-    .put('http://localhost:3000/api/posts/' + id, postData)
+    this.http
+      .put('http://localhost:3000/api/posts/' + id, postData)
       .subscribe(response => {
         this.router.navigate(['/']);
       });
