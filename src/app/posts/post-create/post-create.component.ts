@@ -35,8 +35,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
       .getAuthStatusListener()
       .subscribe(authStatus => {
         this.isLoading = false;
-      }
-    );
+      });
     this.form = new FormGroup({
       title: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)]
@@ -95,7 +94,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
         this.form.value.title,
         this.form.value.content,
         this.form.value.image
-        );
+      );
     } else {
       this.postsService.updatePost(
         this.postId,
@@ -110,5 +109,4 @@ export class PostCreateComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authStatusSub.unsubscribe();
   }
-
 }

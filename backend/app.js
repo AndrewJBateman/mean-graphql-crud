@@ -1,19 +1,21 @@
-require('dotenv').config();
 const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const postsRoutes = require('./routes/posts')
-const userRoutes = require('./routes/user')
+const postsRoutes = require('./routes/posts');
+const userRoutes = require('./routes/user');
 
 const app = express();
-const url = process.env.DB_URL;
 
 mongoose
   .connect(
-  url,
-  { useNewUrlParser: true }
+    'mongodb+srv://' +
+      process.env.MONGO_ATLAS_USERNAME +
+      ':' +
+      process.env.MONGO_ATLAS_PW +
+      process.env.CLUSTER_COLLECTION,
+      { useNewUrlParser: true }
   )
   .then(() => {
     console.log('Connected to database');
@@ -24,7 +26,7 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/images', express.static(path.join("backend/images")));
+app.use('/images', express.static(path.join("images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

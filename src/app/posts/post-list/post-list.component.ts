@@ -34,7 +34,7 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.userId = this.authService.getUserId();
     this.postsSub = this.postsService
       .getPostUpdateListener()
-      .subscribe((postData: { posts: Post[], postCount: number }) => {
+      .subscribe((postData: { posts: Post[]; postCount: number }) => {
         this.isLoading = false;
         this.totalPosts = postData.postCount;
         this.posts = postData.posts;
