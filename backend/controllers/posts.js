@@ -8,9 +8,7 @@ exports.createPost = (req, res, next) => {
       imagePath: url + "/images/" + req.file.filename,
       creator: req.userData.userId
     });
-    post
-      .save()
-      .then(createdPost => {
+    post.save().then(createdPost => {
         res.status(201).json({
           message: 'Post added successfully',
           post: {
@@ -60,11 +58,11 @@ exports.getPosts = (req, res, next) => {
   const postQuery = Post.find();
   let fetchedPosts;
   if (pageSize && currentPage) {
-    postQuery.skip(pageSize * (currentPage - 1))
+    postQuery
+      .skip(pageSize * (currentPage - 1))
       .limit(pageSize);
   }
-  postQuery
-    .then(documents => {
+  postQuery.then(documents => {
       fetchedPosts = documents;
       return Post.count();
     })
@@ -73,7 +71,7 @@ exports.getPosts = (req, res, next) => {
         message: "Posts fetched successfully",
         posts: fetchedPosts,
         maxPosts: count
-      });
+      })
     })
     .catch(error => {
       res.status(500).json({
@@ -84,26 +82,23 @@ exports.getPosts = (req, res, next) => {
 
 exports.getPost = (req, res, next) => {
   Post
-    .findById(req.params.id)
-    .then(post => {
-      if (post){
+    .findById(req.params.id).then(post => {
+      if (post) {
         res.status(200).json(post);
       } else {
-        res.status(404).json({message: 'Post not found'});
+        res.status(404).json({ message: 'Post not found' });
       }
     })
     .catch(error => {
       res.status(500).json({
         message: "Fetching post failed"
-      });
-    });
+      })
+    })
 };
 
 exports.deletePost = (req, res, next) => {
-  Post
-    .deleteOne({ _id: req.params.id, creator: req.userData.userId })
+  Post.deleteOne({ _id: req.params.id, creator: req.userData.userId })
     .then(result => {
-      console.log(result);
       if (result.n > 0) {
         res.status(200).json({ message: 'post deleted' });
       } else {
