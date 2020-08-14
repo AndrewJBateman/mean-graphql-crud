@@ -1,8 +1,8 @@
-# MEAN Form
+# :zap: MEAN Form
 
-Project using MongoDB, Express.js, Angular and Node.js
+* Project using MongoDB, Express.js, Angular and Node.js
 
-## Table of contents
+## :page_facing_up: Table of contents
 
 * [General info](#general-info)
 * [Screenshots](#screenshots)
@@ -13,9 +13,9 @@ Project using MongoDB, Express.js, Angular and Node.js
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
-## General info
+## :books: General info
 
-The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angular-2-and-nodejs-the-practical-guide/learn/v4/content) course contains 13 sections, listed below:
+* The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angular-2-and-nodejs-the-practical-guide/learn/v4/content) course contains 13 sections, listed below:
 
 **Section 1 Getting Started:** Explanation of the MongoDB-Express-Angular-Node.js stack, Single Page Applications.
 
@@ -43,24 +43,23 @@ The [Udemy Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angula
 
 **Section 13 Course Roundup:** Summary and Review of the Course.  
 
-## Screenshots
+## :camera: Screenshots
 
 ![Example screenshot](./img/screenshot.png)
 
-## Technologies
+## :signal_strength: Technologies
 
-* [MongoDB Atlas](https://www.mongodb.com/) version 4.0 using AWS Cloud storage.
-* [Express](https://www.npmjs.com/package/express) version 4.16.4
-* [Angular](https://angular.io/) version 7.0.0, including [Angular Material](https://material.angular.io/)
-* [Node.js](https://nodejs.org/en/) version 10.15.3
+* [MongoDB Atlas v4](https://www.mongodb.com/) using AWS Cloud storage
+* [Express v4](https://www.npmjs.com/package/express)
+* [Angular v7](https://angular.io/), including [Angular Material](https://material.angular.io/)
+* [Node.js v12](https://nodejs.org/en/)
 
-## Setup
+## :floppy_disk: Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* To start the Node.js backend on "localhost://3000": `npm run start:server`
 
-To start the Node.js backend on "localhost://3000": `npm run start:server`
-
-## Code Examples
+## :computer: Code Examples
 
 ```typescript
 export class LoginComponent implements OnInit, OnDestroy {
@@ -91,22 +90,19 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 ```
 
-## Features
+## :cool: Features
 
 * Integrated front and backends.
-* Awesome feature 2
-* Awesome feature 3
 
-## Status & To-do list
+## :clipboard: Status & To-do list
 
 * Status: Project is partially working.
-
 * To-do: Fix error preventing integration and hosting on Amazon AWS. Use Amazon AWS to host integrated app.
 
-## Inspiration
+## :clap: Inspiration
 
 Project is coursework from [Maximilian Schwarzmüller's Course: Angular & NodeJS - The MEAN Stack Guide](https://www.udemy.com/angular-2-and-nodejs-the-practical-guide/learn/v4/content).
 
-## Contact
+## :envelope: Contact
 
-Created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
