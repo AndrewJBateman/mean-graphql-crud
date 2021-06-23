@@ -13,12 +13,11 @@ app.use(express.json()); // To parse the incoming requests with JSON payloads
 app.use(cors());
 
 const config = require("./config/config.json");
-const dbConnString =
-  `mongodb+srv://${config.user}:` +
+const dbConnString = `mongodb+srv://${config.user}:` +
   `${config.password}@cluster0.pl5l8.mongodb.net/` +
   `${config.dbName}?retryWrites=true&w=majority`;
 
-  // route to access GraphQL in browser
+// route to access GraphQL in browser
 app.use(
 	"/graphql",
 	graphqlHTTP({
@@ -28,6 +27,7 @@ app.use(
 	})
 );
 
+// connection to MongoDB
 mongoose
 	.connect(dbConnString, {
 		useUnifiedTopology: true,

@@ -1,6 +1,8 @@
 const Quote = require("../models/quote");
 
 module.exports = {
+
+  // return an array of quotes with id using the map function
 	quotes: async function () {
 		const quotes = await Quote.find();
 		return {
@@ -38,7 +40,7 @@ module.exports = {
 			_id: updatedQuote._id.toString(),
 		};
 	},
-  
+
 	deleteQuote: async function ({ id }) {
 		const quote = await Quote.findById(id);
 		if (!quote) {
