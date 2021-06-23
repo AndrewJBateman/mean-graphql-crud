@@ -1,8 +1,0 @@
-{
-  "env": {
-    "MONGO_ATLAS_PW": "Spider01",
-    "MONGO_ATLAS_USERNAME": "Andrew",
-    "JWT_KEY": "secret_this_should_be_longer",
-    "CLUSTER_COLLECTION": "@cluster0-pl5l8.mongodb.net/node-angular"
-  }
-}

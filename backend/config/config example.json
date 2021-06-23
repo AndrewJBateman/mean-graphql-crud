@@ -1,0 +1,5 @@
+{
+  "user": "your database username",
+  "password": "your database password",
+  "dbName": "your database name"
+}
