@@ -35,19 +35,20 @@
 
 ## :signal_strength: Technologies
 
-* [Node.js v14](https://nodejs.org/) javascript runtime using the [Chrome V8 engine](https://v8.dev/).
-* [Angular v12](https://angular.io/) frontend
-* [GraphQL v15](https://github.com/graphql/graphql-js)
-* [Apollo v2](https://www.apollographql.com/) GraphQL implementation data graph layer
-* [Apollo Client v2](https://www.npmjs.com/package/apollo-client) caching GraphQL client to UI components can fetch data via GraphQL. More documentation [here](https://apollographql.com/docs/react/).
-* [Apollo Angular v2](https://www.npmjs.com/package/apollo-angular) caching GraphQL server. [Website](https://apollo-angular.com/)
+* [Node.js v16](https://nodejs.org/) javascript runtime using the [Chrome V8 engine](https://v8.dev/)
+
+* [Angular v13](https://angular.io/) frontend
+* [GraphQL v16](https://github.com/graphql/graphql-js)
+* [Apollo v3](https://www.apollographql.com/) GraphQL implementation data graph layer
+* [Apollo Client v3](https://www.npmjs.com/package/apollo-client) caching GraphQL client to UI components can fetch data via GraphQL. More documentation [here](https://apollographql.com/docs/react/).
+* [Apollo Angular v3](https://www.npmjs.com/package/apollo-angular) caching GraphQL server. [Website](https://apollo-angular.com/)
 
 ## :floppy_disk: Setup
 
 **Backend**
 * From `/backend` run `npm i` to install dependencies
 * Create `backend/config.json` then add database access credentials - see `config.example.json`
-* `npm start` to run the backend in dev. mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Restarts itself if code updated
+* `npm run start` to run the backend in dev. mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Restarts itself if code updated
 
 **Frontend**
 * From `/frontend` run `npm i` to install dependencies
@@ -73,7 +74,7 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working
+* Status: Part-working. Backend connects, Frontend error: `ERROR Error: Http failure response for https://48p1r2roz4.sse.codesandbox.io/:`
 * To-Do: Add edit to frontend. Add styles
 
 ## :clap: Inspiration
